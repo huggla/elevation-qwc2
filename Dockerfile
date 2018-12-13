@@ -5,7 +5,7 @@ ARG ADDREPOS="http://dl-cdn.alpinelinux.org/alpine/edge/testing"
 ARG BUILDDEPS="dash py2-future py-gdal"
 ARG BUILDCMDS=\
 "   head -188 /buildfs/src/elevation.py.org > /src/elevation.py "\
-"&& tail -26 /buildfs/src/elevation.py.add >> /src/elevation.py "\
+"&& tail -44 /buildfs/src/elevation.py.add >> /src/elevation.py "\
 "&& sed -i 's/# Copyright 2018, Sourcepole AG/# Copyright 2018, Sourcepole AG, Henrik Uggla/' /src/elevation.py "\
 "&& cp /buildfs/src/requirements.txt /src/ "\
 "&& cp -a /usr/bin/dash /usr/local/bin/ "\
