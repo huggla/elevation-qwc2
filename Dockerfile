@@ -3,7 +3,7 @@ ARG CONTENTIMAGE1="huggla/pyinstaller-alpine:$TAG"
 ARG CONTENTDESTINATION1="/"
 ARG BUILDDEPS="dash"
 ARG BUILDCMDS=\
-"   head -30 /buildfs/src/elevation.py.org > /src/elevation.py "\
+"   head -188 /buildfs/src/elevation.py.org > /src/elevation.py "\
 "&& tail -26 /buildfs/src/elevation.py.add >> /src/elevation.py "\
 "&& sed -i 's/# Copyright 2018, Sourcepole AG/# Copyright 2018, Sourcepole AG, Henrik Uggla/' /src/elevation.py "\
 "&& cp /buildfs/src/requirements.txt /src/ "\
