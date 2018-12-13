@@ -2,8 +2,7 @@ ARG TAG="20181204"
 ARG CONTENTIMAGE1="huggla/pyinstaller-alpine:$TAG"
 ARG CONTENTDESTINATION1="/"
 ARG ADDREPOS="http://dl-cdn.alpinelinux.org/alpine/edge/testing"
-ARG RUNDEPS="py2-future py-gdal"
-ARG BUILDDEPS="dash"
+ARG BUILDDEPS="dash py2-future py-gdal"
 ARG BUILDCMDS=\
 "   head -188 /buildfs/src/elevation.py.org > /src/elevation.py "\
 "&& tail -26 /buildfs/src/elevation.py.add >> /src/elevation.py "\
@@ -11,6 +10,7 @@ ARG BUILDCMDS=\
 "&& cp /buildfs/src/requirements.txt /src/ "\
 "&& cp -a /usr/bin/dash /usr/local/bin/ "\
 "&& sed -i 's|shell=True,|shell=True, executable=\"/usr/local/bin/dash\",|g' /usr/local/lib/python2.7/ctypes/util.py "\
+"&& cp -a /usr/lib/python2.7/site-packages/* /usr/local/lib/python2.7/site-packages/ "\
 "&& cd /src "\
 "&& /pyinstaller/pyinstaller.sh --onefile --noconfirm --clean --exclude-module Werkzeug --distpath /imagefs/usr/local/bin elevation.py"
 ARG EXECUTABLES="/usr/local/bin/elevation"
