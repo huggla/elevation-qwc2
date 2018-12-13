@@ -27,6 +27,7 @@ def get_dataset():
         dataset = g._dataset = load_dataset()
     return dataset
 
+
 def load_dataset():
     dsfn = os.environ.get('ELEVATION_DATASET')
     if dsfn is None:
