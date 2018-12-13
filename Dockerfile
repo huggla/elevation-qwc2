@@ -1,6 +1,7 @@
 ARG TAG="20181204"
 ARG CONTENTIMAGE1="huggla/pyinstaller-alpine:$TAG"
 ARG CONTENTDESTINATION1="/"
+ARG RUNDEPS="py2-future"
 ARG BUILDDEPS="dash"
 ARG BUILDCMDS=\
 "   head -188 /buildfs/src/elevation.py.org > /src/elevation.py "\
