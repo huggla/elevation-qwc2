@@ -7,7 +7,7 @@
 
 from flask import Flask, g, abort, request, Response, jsonify
 from flask_cors import CORS
-#from itertools import accumulate
+from itertools import accumulate
 from osgeo import gdal
 from osgeo import ogr
 from osgeo import osr
