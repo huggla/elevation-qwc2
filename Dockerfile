@@ -2,7 +2,7 @@ ARG TAG="20181204"
 ARG CONTENTIMAGE1="huggla/pyinstaller-alpine:$TAG"
 ARG CONTENTDESTINATION1="/"
 ARG ADDREPOS="http://dl-cdn.alpinelinux.org/alpine/edge/testing"
-ARG EXCLUDEAPKS="python2
+ARG EXCLUDEAPKS="python2"
 ARG BUILDDEPS="dash py-gdal"
 ARG BUILDCMDS=\
 "   head -188 /buildfs/src/elevation.py.org > /src/elevation.py "\
